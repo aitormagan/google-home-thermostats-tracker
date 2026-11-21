@@ -1,0 +1,4 @@
+node_modules/
+config.js
+internal_data.md
+npm-debug.log*
