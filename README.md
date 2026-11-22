@@ -10,6 +10,7 @@ The script uses Node.js's built-in `fetch`, so it does not need a Google API cli
 | `humidity` | `value` | Ambient relative humidity in percent |
 
 Both measurements include a `device_id` tag. Google provides the values as the SDM Temperature and Humidity traits. A device without one of those traits is skipped for that measurement.
+Only devices whose SDM Connectivity trait reports `ONLINE` are recorded; devices reported as `OFFLINE` or without a connectivity status are skipped.
 
 ## Requirements
 

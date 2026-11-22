@@ -54,6 +54,9 @@ function toInfluxPoints(devices, mappings) {
 
     for (const device of devices) {
         const traits = device.traits || {};
+        const connectivity = traits['sdm.devices.traits.Connectivity']?.status;
+        if (connectivity !== 'ONLINE') continue;
+
         const sdmDeviceId = (device.name || '').split('/').pop();
         if (!sdmDeviceId) continue;
         const currentName = traits['sdm.devices.traits.Info']?.customName;
